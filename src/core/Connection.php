@@ -3,12 +3,27 @@
 namespace core;
 
 
-abstract class Model
+final class Connection
 {
-    public $db;
+    private static $instance;
 
-    public function __construct()
+    private static function createInstance(): \PDO
     {
-        $this->db = new Db();
+        $config = require_once '../config/db.php';
+
+        $dsn = 'mysql:dbname=' . $config['database_name'] . ';host=' . $config['host'] . ';port=' . $config['port'];
+
+        return new \PDO($dsn, $config['user'], $config['password']);
+
+
+    }
+
+    public static function getInstance(): \PDO
+    {
+        if(!self::$instance) {
+        self::$instance = self::createInstance();
+        }
+        return self::$instance;
+
     }
 }

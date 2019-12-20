@@ -2,7 +2,6 @@
 
 namespace core;
 
-use core\View;
 
 class Router
 {

@@ -35,10 +35,4 @@ class View
         }
         exit;
     }
-
-    public function redirect($url)
-    {
-        header('Location:' . $url);
-        exit;
-    }
 }

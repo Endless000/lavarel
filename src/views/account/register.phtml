@@ -2,22 +2,14 @@
 <head></head>
 <body>
 <div style="color: red; font-size: 14px; padding: 20px; margin: 0 auto; display: block; width:400px;">
-
-    <?php if (isset($checkLogin) && $checkLogin) { ?>
-        <h1> LOGIN alredy is used </h1>
-    <? } ?>
-
-    <?php if (isset($checkEmail) && $checkEmail) { ?>
+    <?php if(isset($email) && $email) {?>
         <h1> EMAIL alredy is used </h1>
     <? } ?>
 
-    <?php if (isset($errors) && is_array($errors)): ?>
-        <ul>
-            <?php foreach ($errors as $error): ?>
-                <li> - <?php echo $error; ?></li>
-            <?php endforeach; ?>
-        </ul>
-    <?php endif; ?>
+    <?php if(isset($login) && $login) {?>
+        <h1> LOGIN alredy is used </h1>
+    <? } ?>
+
 </div>
 
 <form action="" method="post" class="form-login"
