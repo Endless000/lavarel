@@ -1,0 +1,29 @@
+<html>
+<head></head>
+<body>
+<div style="color: red; font-size: 14px; padding: 20px; margin: 0 auto; display: block; width:400px;">
+    <?php if(isset($email) && $email) {?>
+        <h1> EMAIL alredy is used </h1>
+    <? } ?>
+
+    <?php if(isset($login) && $login) {?>
+        <h1> LOGIN alredy is used </h1>
+    <? } ?>
+
+</div>
+
+<form action="" method="post" class="form-login"
+      style="display: block; width: 400px; margin: 0 auto;  padding: 20px; text-align: center;">
+    <h2>
+        <center>Login
+    </h2>
+    </center><br>
+    <input type="text" name="email" placeholder="E-mail" value=""/><br><br>
+    <input type="text" name="login" placeholder="Login" value=""/><br><br>
+    <input type="password" name="password" placeholder="Password" value=""/><br><br>
+    <div class="os"></div>
+    <input type="submit" name="submit" class="btn btn-default" style="width: 120px;" value="Login"/>
+    <div class="os"></div>
+</form>
+</body>
+</html>
