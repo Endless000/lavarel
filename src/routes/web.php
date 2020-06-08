@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\mainController;
+use Illuminate\Support\Facades\Route;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,14 +16,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [mainController::class, 'index'])->name('layouts.index');
 
 
-Route::get('/home', function () {
-    return view('layouts.index');
+Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
+
+
+Route::get('/aa', function () {
+    return view('layout');
 });
 
 

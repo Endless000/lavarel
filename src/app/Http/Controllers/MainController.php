@@ -19,7 +19,7 @@ class mainController extends Controller
         $detail = $detailRepository->all();
         $city = $cityRepository->lastArticle();
 
-        return view('main',
+        return view('layouts.index',
             compact('detail', 'city', 'newApartments'));
     }
 }
